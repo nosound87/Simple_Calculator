@@ -38,6 +38,7 @@ public class Calculator {
         System.out.println("2. Substract (-)");
         System.out.println("3. Multiplication (*)");
         System.out.println("4. Division (/)");
+        System.out.println("5. EXIT (Bye bye... :)");
         System.out.print("Chose some function: ");
         Scanner scanner = new Scanner(System.in);
         mathFunc = scanner.nextInt();
@@ -50,8 +51,11 @@ public class Calculator {
         else if (mathFunc == 3) {
             multiplication();
         }
-        else {
+        else if (mathFunc == 4){
             division();
+        }
+        else {
+            System.out.println("Exit");
         }
 
     }
@@ -60,7 +64,9 @@ public class Calculator {
     public static void main(String [] args) {
         System.out.println("Simple Calculator");
         Calculator myCalc = new Calculator();
-        myCalc.inputData();
-        myCalc.chooseFunction();
+        while (myCalc.mathFunc !=5) {
+            myCalc.inputData();
+            myCalc.chooseFunction();
+        }
     }
 }
